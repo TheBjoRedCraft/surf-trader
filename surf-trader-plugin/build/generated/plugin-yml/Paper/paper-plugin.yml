@@ -1,0 +1,15 @@
+api-version: "1.21"
+name: SurfTrader
+version: 1.21.4-1.0.0-SNAPSHOT
+main: dev.slne.surf.trader.SurfTrader
+authors:
+  - SLNE Development
+  - TheBjoRedCraft
+prefix: SurfTrader
+folia-supported: false
+dependencies:
+  server:
+    CommandAPI:
+      load: BEFORE
+      required: true
+      join-classpath: true

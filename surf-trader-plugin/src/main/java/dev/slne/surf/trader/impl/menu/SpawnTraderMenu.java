@@ -12,6 +12,7 @@ import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemRarity;
 import org.bukkit.inventory.ItemStack;
 
 @Getter
@@ -40,6 +41,7 @@ public class SpawnTraderMenu extends ChestGui {
         .addLoreLine(Component.text("> ", PluginColor.LIGHT_GRAY).append(Component.text("5x Smaragde", PluginColor.GOLD)))
         .addLoreLine(Component.empty())
         .addLoreLine(Component.text("Wiederverwendbar: ", PluginColor.LIGHT_BLUE).append(Component.text("❌", NamedTextColor.RED).decorate(TextDecoration.BOLD)))
+        .setRarity(ItemRarity.EPIC)
         .setCustomModelData(330001)
         .build();
 
@@ -57,6 +59,7 @@ public class SpawnTraderMenu extends ChestGui {
         .addLoreLine(Component.text("> ", PluginColor.LIGHT_GRAY).append(Component.text("5x Smaragde", PluginColor.GOLD)))
         .addLoreLine(Component.empty())
         .addLoreLine(Component.text("Wiederverwendbar: ", PluginColor.LIGHT_BLUE).append(Component.text("✔", NamedTextColor.GREEN).decorate(TextDecoration.BOLD)))
+        .setRarity(ItemRarity.EPIC)
         .setCustomModelData(330001)
         .build();
 
@@ -76,6 +79,7 @@ public class SpawnTraderMenu extends ChestGui {
         .addLoreLine(Component.text("> ", PluginColor.LIGHT_GRAY).append(Component.text("5x Smaragde", PluginColor.GOLD)))
         .addLoreLine(Component.empty())
         .addLoreLine(Component.text("Wiederverwendbar: ", PluginColor.LIGHT_BLUE).append(Component.text("❌", NamedTextColor.RED).decorate(TextDecoration.BOLD)))
+        .setRarity(ItemRarity.EPIC)
         .setCustomModelData(330001)
         .build();
 
@@ -100,9 +104,12 @@ public class SpawnTraderMenu extends ChestGui {
       tradeService.buy((Player) event.getWhoClicked(), tradeService.getTrade(invisibleItemFrame));
     });
 
-    addPane(topLeft);
-    addPane(topRight);
-    addPane(bottomLeft);
-    addPane(bottomRight);
+    this.addPane(topLeft);
+    this.addPane(topRight);
+    this.addPane(bottomLeft);
+    this.addPane(bottomRight);
+
+    this.setOnGlobalClick(event -> event.setCancelled(true));
+    this.setOnGlobalDrag(event -> event.setCancelled(true));
   }
 }

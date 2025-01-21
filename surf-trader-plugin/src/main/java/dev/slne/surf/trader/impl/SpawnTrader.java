@@ -1,9 +1,5 @@
 package dev.slne.surf.trader.impl;
 
-import de.oliver.fancynpcs.api.FancyNpcsPlugin;
-import de.oliver.fancynpcs.api.Npc;
-import de.oliver.fancynpcs.api.NpcData;
-import de.oliver.fancynpcs.api.utils.SkinFetcher.SkinData;
 import dev.slne.surf.trader.annotation.Trader;
 import dev.slne.surf.trader.impl.menu.SpawnTraderMenu;
 import dev.slne.surf.trader.obj.MenuableTrader;
@@ -14,9 +10,12 @@ import dev.slne.surf.trader.obj.SpawnableTrader;
 import it.unimi.dsi.fastutil.objects.ObjectArraySet;
 import it.unimi.dsi.fastutil.objects.ObjectSet;
 
-import java.util.UUID;
+import net.citizensnpcs.api.CitizensAPI;
+import net.citizensnpcs.api.npc.NPC;
+import net.citizensnpcs.trait.SkinTrait;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Location;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
 @Trader
@@ -55,6 +54,8 @@ public class SpawnTrader implements ShopTrader, MenuableTrader, SpawnableTrader 
 
   @Override
   public void spawn(Location location) {
+    /*
+
     NpcData data = new NpcData(this.getID() + UUID.randomUUID(), UUID.randomUUID(), location);
     data.setSkin(new SkinData("<gold><b>Spawn Trader", null, null ));
     data.setDisplayName(STRING_NAME);
@@ -64,5 +65,12 @@ public class SpawnTrader implements ShopTrader, MenuableTrader, SpawnableTrader 
 
     npc.create();
     npc.spawnForAll();
+
+     */
+
+    NPC npc = CitizensAPI.getNPCRegistry().createNPC(EntityType.PLAYER, STRING_NAME);
+
+    npc.getOrAddTrait(SkinTrait.class).setSkinName("Trader");
+    npc.spawn(location);
   }
 }

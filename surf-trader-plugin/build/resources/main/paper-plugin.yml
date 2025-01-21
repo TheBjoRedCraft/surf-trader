@@ -9,6 +9,10 @@ prefix: SurfTrader
 folia-supported: false
 dependencies:
   server:
+    Citizens:
+      load: BEFORE
+      required: true
+      join-classpath: true
     CommandAPI:
       load: BEFORE
       required: true

@@ -14,4 +14,8 @@ public interface ShopTrader {
   static ShopTrader getTrader(String id) {
     return RegistryService.getInstance().getRegisteredTraders().stream().filter(trader -> trader.getID().equals(id)).findFirst().orElse(null);
   }
+
+  static MenuableTrader asMenuable(ShopTrader trader) {
+    return (MenuableTrader) trader;
+  }
 }

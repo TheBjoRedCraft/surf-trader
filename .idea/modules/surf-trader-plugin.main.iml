@@ -28,6 +28,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: dev.jorel:commandapi-bukkit-core:9.7.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: de.oliver:FancyNpcs:2.4.1" level="project" />
     <orderEntry type="library" name="Gradle: com.github.stefvanschie.inventoryframework:IF:0.10.17" level="project" />
     <orderEntry type="library" name="Gradle: org.reflections:reflections:0.10.2" level="project" />
     <orderEntry type="library" name="Gradle: com.github.ben-manes.caffeine:caffeine:3.2.0" level="project" />
@@ -80,6 +81,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.maven:maven-builder-support:3.9.6" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.eclipse.sisu:org.eclipse.sisu.inject:0.9.0.M2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.commons:commons-lang3:3.12.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: dev.slne:surf-transaction-api:1.21-1.0.0-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.slf4j:slf4j-api:1.7.32" level="project" />
   </component>
 </module>

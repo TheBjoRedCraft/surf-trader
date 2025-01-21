@@ -25,21 +25,30 @@ repositories {
 
     maven ("https://repo.codemc.org/repository/maven-public/")
 
-    maven("https://repo.fancyplugins.de/releases")
+    //maven("https://repo.fancyplugins.de/releases")
 
     maven("https://repo.slne.dev/repository/maven-external-developers/") {
         name = "maven-external-developers"
+    }
+
+    maven {
+        name = "citizens-repo"
+        url = uri("https://maven.citizensnpcs.co/repo")
     }
 }
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
     compileOnly ("dev.jorel:commandapi-bukkit-core:9.7.0")
-    compileOnly("de.oliver:FancyNpcs:2.4.1")
+    //compileOnly("de.oliver:FancyNpcs:2.4.1")
 
     /*compileOnly("dev.slne:surf-transaction-api:1.21-1.0.0-SNAPSHOT") {
         exclude("*", "*")
     }*/
+
+    compileOnly("net.citizensnpcs:citizens-main:2.0.37-SNAPSHOT") {
+        exclude("*", "*")
+    }
 
     implementation ("com.github.stefvanschie.inventoryframework:IF:0.10.17")
     implementation("org.reflections:reflections:0.10.2")
@@ -52,7 +61,8 @@ tasks {
 
         downloadPlugins {
             modrinth("CommandAPI", "9.7.0")
-            modrinth("FancyNpcs", "2.4.1")
+            //modrinth("FancyNpcs", "2.4.1")
+            url("https://ci.citizensnpcs.co/job/Citizens2/lastBuild/artifact/dist/target/Citizens-2.0.37-b3693.jar")
         }
     }
 
@@ -73,6 +83,11 @@ paper {
 
     serverDependencies {
         register("CommandAPI") {
+            load = PaperPluginDescription.RelativeLoadOrder.BEFORE
+            required = true
+        }
+
+        register("Citizens") {
             load = PaperPluginDescription.RelativeLoadOrder.BEFORE
             required = true
         }

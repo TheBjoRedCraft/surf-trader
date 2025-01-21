@@ -1,16 +1,16 @@
 package dev.slne.surf.trader.listener;
 
-import de.oliver.fancynpcs.api.NpcData;
-import de.oliver.fancynpcs.api.events.NpcInteractEvent;
 
 import dev.slne.surf.trader.impl.SpawnTrader;
-import dev.slne.surf.trader.obj.MenuableTrader;
 import dev.slne.surf.trader.obj.ShopTrader;
-
+import net.citizensnpcs.api.event.NPCClickEvent;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
 public class PlayerInteractListener implements Listener {
+  /*
+
   @EventHandler
   public void onNpcInteract(NpcInteractEvent event) {
     NpcData data = event.getNpc().getData();
@@ -23,6 +23,17 @@ public class PlayerInteractListener implements Listener {
           trader.openMenu(event.getPlayer());
         }
       }
+    }
+  }
+
+   */
+
+  @EventHandler
+  public void onInteract(NPCClickEvent event) {
+    Player player = event.getClicker();
+
+    if(event.getNPC().getName().equalsIgnoreCase(SpawnTrader.STRING_NAME)) {
+      ShopTrader.asMenuable(ShopTrader.getTrader(SpawnTrader.STRING_ID)).openMenu(player);
     }
   }
 }

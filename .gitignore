@@ -2,3 +2,4 @@
 /surf-trader-plugin/build/
 /.idea/
 *.class
+/surf-trader-plugin/.gradle/

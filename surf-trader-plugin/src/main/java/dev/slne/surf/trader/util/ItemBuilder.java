@@ -12,6 +12,7 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
+import org.bukkit.inventory.ItemRarity;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.EnchantmentStorageMeta;
@@ -394,9 +395,18 @@ public class ItemBuilder {
     if (im.hasLore()) {
       lore = new ArrayList<>(im.lore());
     }
+
     lore.add(line.decoration(TextDecoration.ITALIC, false));
     im.lore(lore);
     itemStack.setItemMeta(im);
+    return this;
+  }
+
+  public ItemBuilder setRarity(ItemRarity rarity) {
+    itemStack.editMeta(meta -> {
+      meta.setRarity(rarity);
+    });
+
     return this;
   }
 

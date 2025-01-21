@@ -10,8 +10,10 @@ import dev.slne.surf.trader.obj.MenuableTrader;
 import dev.slne.surf.trader.obj.ShopTrade;
 import dev.slne.surf.trader.obj.ShopTrader;
 import dev.slne.surf.trader.obj.SpawnableTrader;
+
 import it.unimi.dsi.fastutil.objects.ObjectArraySet;
 import it.unimi.dsi.fastutil.objects.ObjectSet;
+
 import java.util.UUID;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Location;

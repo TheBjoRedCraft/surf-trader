@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.stefvanschie.inventoryframework:IF:0.10.17" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="com.github.stefvanschie.inventoryframework" artifactId="IF" version="0.10.17" baseVersion="0.10.17" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.stefvanschie.inventoryframework/IF/0.10.17/f1eb5713e78e70b352c2ac85d05ce382b846d35/IF-0.10.17.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.stefvanschie.inventoryframework/IF/0.10.17/e23b6419a70bbc40de5ff87d6ba141b0c023f9bf/IF-0.10.17-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

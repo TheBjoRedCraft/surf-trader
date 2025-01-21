@@ -36,9 +36,10 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
     compileOnly ("dev.jorel:commandapi-bukkit-core:9.7.0")
     compileOnly("de.oliver:FancyNpcs:2.4.1")
-    compileOnly("dev.slne:surf-transaction-api:1.21-1.0.0-SNAPSHOT") {
+
+    /*compileOnly("dev.slne:surf-transaction-api:1.21-1.0.0-SNAPSHOT") {
         exclude("*", "*")
-    }
+    }*/
 
     implementation ("com.github.stefvanschie.inventoryframework:IF:0.10.17")
     implementation("org.reflections:reflections:0.10.2")
@@ -53,6 +54,10 @@ tasks {
             modrinth("CommandAPI", "9.7.0")
             modrinth("FancyNpcs", "2.4.1")
         }
+    }
+
+    shadowJar {
+        archiveClassifier = ""
     }
 }
 

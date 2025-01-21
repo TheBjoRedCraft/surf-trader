@@ -1,0 +1,4 @@
+/surf-trader-plugin/run/
+/surf-trader-plugin/build/
+/.idea/
+*.class

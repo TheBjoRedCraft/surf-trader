@@ -2,4 +2,8 @@
 /surf-trader-plugin/build/
 /.idea/
 *.class
+*.bin
+*.lock
+.gitignore
+vcs.xml
 /surf-trader-plugin/.gradle/

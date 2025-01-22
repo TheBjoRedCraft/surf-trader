@@ -11,6 +11,10 @@ public class TradeRequirementService {
   private static final TradeRequirementService instance = new TradeRequirementService();
 
   public boolean hasRequirements(Player player, ShopTrade trade) {
+    if(trade == null) {
+      return false;
+    }
+
     Object required = trade.getPrize();
 
     if(required instanceof ItemStack stack) {
@@ -29,6 +33,10 @@ public class TradeRequirementService {
   }
 
   public void removeRequirements(Player player, ShopTrade trade) {
+    if(trade == null) {
+      return;
+    }
+
     Object required = trade.getPrize();
 
     if(required instanceof ItemStack stack) {

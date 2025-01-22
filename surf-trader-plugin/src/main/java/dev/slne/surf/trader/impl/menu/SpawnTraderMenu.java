@@ -1,5 +1,6 @@
 package dev.slne.surf.trader.impl.menu;
 
+import com.github.stefvanschie.inventoryframework.adventuresupport.ComponentHolder;
 import com.github.stefvanschie.inventoryframework.gui.GuiItem;
 import com.github.stefvanschie.inventoryframework.gui.type.ChestGui;
 import com.github.stefvanschie.inventoryframework.pane.OutlinePane;
@@ -10,6 +11,7 @@ import lombok.Getter;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextDecoration;
+
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemRarity;
@@ -20,7 +22,12 @@ public class SpawnTraderMenu extends ChestGui {
   private final TradeService tradeService = TradeService.getInstance();
 
   public SpawnTraderMenu(Player player) {
-    super(6, "Spawn Trader");
+    super(6, "<shift:-8><glyph:menu_surf_trader_spawn>");
+
+    /*
+    ComponentHolder.of(MiniMessage.miniMessage().deserialize("<white><shift:-8>ꐑ"))
+    "<shift:-8><glyph:menu_surf_trader_spawn>"
+     */
 
     final OutlinePane topLeft = new OutlinePane(0, 0, 4, 3);
     final OutlinePane topRight = new OutlinePane(5, 0, 4, 3);

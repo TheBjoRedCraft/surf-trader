@@ -3,6 +3,7 @@ package dev.slne.surf.trader;
 import dev.slne.surf.trader.command.SurfTraderCommand;
 import dev.slne.surf.trader.listener.PlayerInteractListener;
 import dev.slne.surf.trader.service.RegistryService;
+
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 

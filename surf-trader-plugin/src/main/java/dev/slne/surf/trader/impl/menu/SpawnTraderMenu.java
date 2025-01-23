@@ -34,7 +34,7 @@ public class SpawnTraderMenu extends ChestGui {
     final OutlinePane bottomLeft = new OutlinePane(0, 3, 4, 3);
     final OutlinePane bottomRight = new OutlinePane(5, 3, 4, 3);
 
-    final ItemStack globeBannerItem = new ItemBuilder(Material.PAPER)
+    final ItemStack globeBannerItem = new ItemBuilder(Material.COMMAND_BLOCK_MINECART)
         .setName(Component.text("Globe Banner Vorlage"))
         .addLoreLine(Component.text("Mit dieser Banner Vorlage kannst du", PluginColor.LIGHT_GRAY))
         .addLoreLine(Component.text("deinen eigenen Banner mit dieser", PluginColor.LIGHT_GRAY))
@@ -52,7 +52,7 @@ public class SpawnTraderMenu extends ChestGui {
         .setCustomModelData("surf_trader_invisible_item")
         .build();
 
-    final ItemStack invisibleItemFrame = new ItemBuilder(Material.PAPER)
+    final ItemStack invisibleItemFrame = new ItemBuilder(Material.COMMAND_BLOCK_MINECART)
         .setName(Component.text("Unsichtbarer Item Rahmen"))
         .addLoreLine(Component.text("Ein unsichtbarer Item Rahmen, nach", PluginColor.LIGHT_GRAY))
         .addLoreLine(Component.text("dem abbauen bleibt der Rahmen", PluginColor.LIGHT_GRAY))
@@ -70,7 +70,7 @@ public class SpawnTraderMenu extends ChestGui {
         .setCustomModelData("surf_trader_invisible_item")
         .build();
 
-    final ItemStack lightBlock = new ItemBuilder(Material.PAPER)
+    final ItemStack lightBlock = new ItemBuilder(Material.COMMAND_BLOCK_MINECART)
         .setName(Component.text("Licht Block"))
         .addLoreLine(Component.text("Eine unsichtbare Licht Quelle.", PluginColor.LIGHT_GRAY))
         .addLoreLine(Component.text("Diese kann pro Item nur einmal platziert", PluginColor.LIGHT_GRAY))

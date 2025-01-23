@@ -50,7 +50,7 @@ dependencies {
         exclude("*", "*")
     }
 
-    implementation ("com.github.stefvanschie.inventoryframework:IF:0.10.17")
+    implementation ("com.github.stefvanschie.inventoryframework:IF:0.10.19")
     implementation("org.reflections:reflections:0.10.2")
     implementation("com.github.ben-manes.caffeine:caffeine:3.2.0")
 }

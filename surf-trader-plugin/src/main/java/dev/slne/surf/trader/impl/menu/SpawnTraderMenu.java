@@ -49,7 +49,7 @@ public class SpawnTraderMenu extends ChestGui {
         .addLoreLine(Component.empty())
         .addLoreLine(Component.text("Wiederverwendbar: ", PluginColor.LIGHT_BLUE).append(Component.text("❌", NamedTextColor.RED).decorate(TextDecoration.BOLD)))
         .setRarity(ItemRarity.EPIC)
-        .setCustomModelData(330001)
+        .setCustomModelData("surf_trader_invisible_item")
         .build();
 
     final ItemStack invisibleItemFrame = new ItemBuilder(Material.PAPER)
@@ -67,7 +67,7 @@ public class SpawnTraderMenu extends ChestGui {
         .addLoreLine(Component.empty())
         .addLoreLine(Component.text("Wiederverwendbar: ", PluginColor.LIGHT_BLUE).append(Component.text("✔", NamedTextColor.GREEN).decorate(TextDecoration.BOLD)))
         .setRarity(ItemRarity.EPIC)
-        .setCustomModelData(330001)
+        .setCustomModelData("surf_trader_invisible_item")
         .build();
 
     final ItemStack lightBlock = new ItemBuilder(Material.PAPER)
@@ -87,7 +87,7 @@ public class SpawnTraderMenu extends ChestGui {
         .addLoreLine(Component.empty())
         .addLoreLine(Component.text("Wiederverwendbar: ", PluginColor.LIGHT_BLUE).append(Component.text("❌", NamedTextColor.RED).decorate(TextDecoration.BOLD)))
         .setRarity(ItemRarity.EPIC)
-        .setCustomModelData(330001)
+        .setCustomModelData("surf_trader_invisible_item")
         .build();
 
     topLeft.addItem(new GuiItem(globeBannerItem));

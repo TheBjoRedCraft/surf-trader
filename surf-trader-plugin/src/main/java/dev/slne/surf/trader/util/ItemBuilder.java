@@ -1,5 +1,6 @@
 package dev.slne.surf.trader.util;
 
+import io.papermc.paper.datacomponent.item.CustomModelData;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -20,6 +21,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.inventory.meta.SkullMeta;
+import org.bukkit.inventory.meta.components.CustomModelDataComponent;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -114,6 +116,14 @@ public class ItemBuilder {
   public ItemBuilder setCustomModelData(int amount) {
     itemStack.editMeta(meta -> {
       meta.setCustomModelData(amount);
+    });
+
+    return this;
+  }
+
+  public ItemBuilder setCustomModelData(String customModelData) {
+    itemStack.editMeta(meta -> {
+      meta.getCustomModelDataComponent().setStrings(List.of(customModelData));
     });
 
     return this;

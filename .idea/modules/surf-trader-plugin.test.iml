@@ -20,7 +20,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="surf-trader-plugin.main" />
-    <orderEntry type="library" name="Gradle: com.github.stefvanschie.inventoryframework:IF:0.10.17" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.stefvanschie.inventoryframework:IF:0.10.19" level="project" />
     <orderEntry type="library" name="Gradle: org.reflections:reflections:0.10.2" level="project" />
     <orderEntry type="library" name="Gradle: com.github.ben-manes.caffeine:caffeine:3.2.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.projectlombok:lombok:1.18.34" level="project" />

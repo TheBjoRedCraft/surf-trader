@@ -17,7 +17,6 @@ public class TradeRequirementService {
     }
 
     ObjectList<Object> required = trade.getPrize();
-
     boolean hasRequirements = false;
 
     for (Object object : required) {
@@ -30,11 +29,11 @@ public class TradeRequirementService {
           /* Add Transaction API for EventCoins */
         }
 
-        return true;
+        return hasRequirements;
       }
     }
 
-    return false;
+    return hasRequirements;
   }
 
   public void removeRequirements(Player player, ShopTrade trade) {
@@ -42,15 +41,17 @@ public class TradeRequirementService {
       return;
     }
 
-    Object required = trade.getPrize();
+    ObjectList<Object> required = trade.getPrize();
 
-    if(required instanceof ItemStack stack) {
-      player.getInventory().removeItem(stack);
-    } else if(required instanceof Integer amount) {
-      if(trade.getCurrency().equals(ShopTradeCurrency.CAST_COINS)) {
-        /* Add Transaction API for CastCoins */
-      } else if(trade.getCurrency().equals(ShopTradeCurrency.EVENT_COINS)) {
-        /* Add Transaction API for EventCoins */
+    for (Object object : required) {
+      if(object instanceof ItemStack stack) {
+        player.getInventory().removeItem(stack);
+      } else if(object instanceof Integer amount) {
+        if(trade.getCurrency().equals(ShopTradeCurrency.CAST_COINS)) {
+          /* Add Transaction API for CastCoins */
+        } else if(trade.getCurrency().equals(ShopTradeCurrency.EVENT_COINS)) {
+          /* Add Transaction API for EventCoins */
+        }
       }
     }
   }

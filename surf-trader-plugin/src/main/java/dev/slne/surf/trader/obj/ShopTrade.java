@@ -11,5 +11,5 @@ public interface ShopTrade {
   ItemStack getItem();
   ShopTradeCurrency getCurrency();
 
-  int getCooldown();
+  long getCooldown();
 }

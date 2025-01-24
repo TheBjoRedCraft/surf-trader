@@ -25,8 +25,6 @@ repositories {
 
     maven ("https://repo.codemc.org/repository/maven-public/")
 
-    //maven("https://repo.fancyplugins.de/releases")
-
     maven("https://repo.slne.dev/repository/maven-external-developers/") {
         name = "maven-external-developers"
     }
@@ -40,7 +38,6 @@ repositories {
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
     compileOnly ("dev.jorel:commandapi-bukkit-core:9.7.0")
-    //compileOnly("de.oliver:FancyNpcs:2.4.1")
 
     /*compileOnly("dev.slne:surf-transaction-api:1.21-1.0.0-SNAPSHOT") {
         exclude("*", "*")

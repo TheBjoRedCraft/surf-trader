@@ -3,36 +3,18 @@ package dev.slne.surf.trader.listener;
 
 import dev.slne.surf.trader.impl.SpawnTrader;
 import dev.slne.surf.trader.obj.ShopTrader;
-import net.citizensnpcs.api.event.NPCClickEvent;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 
 public class PlayerInteractListener implements Listener {
-  /*
 
   @EventHandler
-  public void onNpcInteract(NpcInteractEvent event) {
-    NpcData data = event.getNpc().getData();
+  public void onInteract(PlayerInteractAtEntityEvent event) {
+    Player player = event.getPlayer();
 
-    if(data.getDisplayName().equalsIgnoreCase(SpawnTrader.STRING_NAME)) {
-      ShopTrader spawnTrader = ShopTrader.getTrader(SpawnTrader.STRING_ID);
-
-      if(spawnTrader != null) {
-        if(spawnTrader instanceof MenuableTrader trader) {
-          trader.openMenu(event.getPlayer());
-        }
-      }
-    }
-  }
-
-   */
-
-  @EventHandler
-  public void onInteract(NPCClickEvent event) {
-    Player player = event.getClicker();
-
-    if(event.getNPC().getName().equalsIgnoreCase(SpawnTrader.STRING_NAME)) {
+    if(event.getRightClicked().getScoreboardTags().contains(SpawnTrader.STRING_ID)) {
       ShopTrader.asMenuable(ShopTrader.getTrader(SpawnTrader.STRING_ID)).openMenu(player);
     }
   }

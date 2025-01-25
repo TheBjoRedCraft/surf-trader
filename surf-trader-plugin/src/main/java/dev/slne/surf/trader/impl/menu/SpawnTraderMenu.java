@@ -48,6 +48,9 @@ public class SpawnTraderMenu extends ChestGui {
         .addLoreLine(Component.text("> ", PluginColor.LIGHT_GRAY).append(Component.text("5x Smaragde", PluginColor.GOLD)))
         .addLoreLine(Component.empty())
         .addLoreLine(Component.text("Wiederverwendbar: ", PluginColor.LIGHT_BLUE).append(Component.text("❌", NamedTextColor.RED).decorate(TextDecoration.BOLD)))
+        .addLoreLine(Component.text("Klicke,", PluginColor.GOLD).append(Component.text(" um dieses Item ", PluginColor.LIGHT_GRAY)).append(Component.text("1x zukaufen", PluginColor.GOLD)))
+        .addLoreLine(Component.text("Shift-Klicke,", PluginColor.GOLD).append(Component.text(" um dieses Item ", PluginColor.LIGHT_GRAY)))
+        .addLoreLine(Component.text("32x zukaufen", PluginColor.GOLD))
         .setRarity(ItemRarity.EPIC)
         .setCustomModelData("surf_trader_invisible_item")
         .build();
@@ -66,6 +69,9 @@ public class SpawnTraderMenu extends ChestGui {
         .addLoreLine(Component.text("> ", PluginColor.LIGHT_GRAY).append(Component.text("5x Smaragde", PluginColor.GOLD)))
         .addLoreLine(Component.empty())
         .addLoreLine(Component.text("Wiederverwendbar: ", PluginColor.LIGHT_BLUE).append(Component.text("✔", NamedTextColor.GREEN).decorate(TextDecoration.BOLD)))
+        .addLoreLine(Component.text("Klicke,", PluginColor.GOLD).append(Component.text(" um dieses Item ", PluginColor.LIGHT_GRAY)).append(Component.text("1x zukaufen", PluginColor.GOLD)))
+        .addLoreLine(Component.text("Shift-Klicke,", PluginColor.GOLD).append(Component.text(" um dieses Item ", PluginColor.LIGHT_GRAY)))
+        .addLoreLine(Component.text("32x zukaufen", PluginColor.GOLD))
         .setRarity(ItemRarity.EPIC)
         .setCustomModelData("surf_trader_invisible_item")
         .build();
@@ -86,6 +92,9 @@ public class SpawnTraderMenu extends ChestGui {
         .addLoreLine(Component.text("> ", PluginColor.LIGHT_GRAY).append(Component.text("5x Smaragde", PluginColor.GOLD)))
         .addLoreLine(Component.empty())
         .addLoreLine(Component.text("Wiederverwendbar: ", PluginColor.LIGHT_BLUE).append(Component.text("❌", NamedTextColor.RED).decorate(TextDecoration.BOLD)))
+        .addLoreLine(Component.text("Klicke,", PluginColor.GOLD).append(Component.text(" um dieses Item ", PluginColor.LIGHT_GRAY)).append(Component.text("1x zukaufen", PluginColor.GOLD)))
+        .addLoreLine(Component.text("Shift-Klicke,", PluginColor.GOLD).append(Component.text(" um dieses Item ", PluginColor.LIGHT_GRAY)))
+        .addLoreLine(Component.text("32x zukaufen", PluginColor.GOLD))
         .setRarity(ItemRarity.EPIC)
         .setCustomModelData("surf_trader_invisible_item")
         .build();

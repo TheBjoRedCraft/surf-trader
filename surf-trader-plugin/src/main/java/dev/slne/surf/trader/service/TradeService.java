@@ -11,6 +11,7 @@ import lombok.Getter;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 
 @Getter
@@ -77,6 +78,30 @@ public class TradeService {
       player.sendMessage(Component.text("Du hast ", NamedTextColor.GOLD).append(Component.text(count)).append(Component.text("x ")).append(trade.getName()).append(Component.text(" gekauft", NamedTextColor.GOLD)));
     } else {
       player.sendMessage(Component.text("Du hast nicht genug Ressourcen, um diesen Handel durchzuführen.", NamedTextColor.RED));
+    }
+  }
+
+  public void handleClick(InventoryClickEvent event) {
+    ItemStack stack = event.getCurrentItem();
+
+    if(event.getWhoClicked() instanceof Player player) {
+      if (stack == null) {
+        return;
+      }
+
+      ShopTrade trade = this.getTrade(stack);
+
+      if (trade == null) {
+        return;
+      }
+
+      event.setCancelled(true);
+
+      if (event.isShiftClick()) {
+        this.buyAYC(player, trade);
+      } else {
+        this.buy(player, trade);
+      }
     }
   }
 

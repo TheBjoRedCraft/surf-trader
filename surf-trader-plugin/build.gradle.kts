@@ -58,7 +58,6 @@ tasks {
 
         downloadPlugins {
             modrinth("CommandAPI", "9.7.0")
-            //modrinth("FancyNpcs", "2.4.1")
             url("https://ci.citizensnpcs.co/job/Citizens2/lastBuild/artifact/dist/target/Citizens-2.0.37-b3693.jar")
         }
     }

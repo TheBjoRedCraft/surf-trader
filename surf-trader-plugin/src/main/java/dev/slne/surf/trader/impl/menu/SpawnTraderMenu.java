@@ -100,15 +100,27 @@ public class SpawnTraderMenu extends ChestGui {
     bottomRight.setRepeat(true);
 
     topLeft.setOnClick(event -> {
-      tradeService.buy((Player) event.getWhoClicked(), tradeService.getTrade(globeBannerItem));
+      if(event.getClick().isShiftClick()) {
+        tradeService.buyAYC((Player) event.getWhoClicked(), tradeService.getTrade(globeBannerItem));
+      } else {
+        tradeService.buy((Player) event.getWhoClicked(), tradeService.getTrade(globeBannerItem));
+      }
     });
 
     bottomLeft.setOnClick(event -> {
-      tradeService.buy((Player) event.getWhoClicked(), tradeService.getTrade(lightBlock));
+      if(event.getClick().isShiftClick()) {
+        tradeService.buyAYC((Player) event.getWhoClicked(), tradeService.getTrade(lightBlock));
+      } else {
+        tradeService.buy((Player) event.getWhoClicked(), tradeService.getTrade(lightBlock));
+      }
     });
 
     bottomRight.setOnClick(event -> {
-      tradeService.buy((Player) event.getWhoClicked(), tradeService.getTrade(invisibleItemFrame));
+      if(event.getClick().isShiftClick()) {
+        tradeService.buyAYC((Player) event.getWhoClicked(), tradeService.getTrade(invisibleItemFrame));
+      } else {
+        tradeService.buy((Player) event.getWhoClicked(), tradeService.getTrade(invisibleItemFrame));
+      }
     });
 
     this.addPane(topLeft);

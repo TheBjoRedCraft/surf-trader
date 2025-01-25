@@ -29,6 +29,7 @@ import org.bukkit.potion.PotionEffectType;
 /**
  * The type Item builder.
  */
+@SuppressWarnings("UnstableApiUsage")
 public class ItemBuilder {
 
   private final ItemStack itemStack;
@@ -123,7 +124,11 @@ public class ItemBuilder {
 
   public ItemBuilder setCustomModelData(String customModelData) {
     itemStack.editMeta(meta -> {
-      meta.getCustomModelDataComponent().setStrings(List.of(customModelData));
+      CustomModelDataComponent component = meta.getCustomModelDataComponent();
+
+      component.setStrings(List.of(customModelData));
+
+      meta.setCustomModelDataComponent(component);
     });
 
     return this;

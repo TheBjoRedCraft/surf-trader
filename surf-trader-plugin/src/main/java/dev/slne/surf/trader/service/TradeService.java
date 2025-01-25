@@ -48,6 +48,34 @@ public class TradeService {
     player.sendMessage(Component.text("Du hast ", NamedTextColor.GOLD).append(trade.getName()).append(Component.text(" gekauft", NamedTextColor.GOLD)));
   }
 
+  public void buyAYC(Player player, ShopTrade trade) {
+    if (cooldownService.isCooldown(player, trade)) {
+      player.sendActionBar(Component.text("Bitte warte noch ", NamedTextColor.GRAY).append(TimeUtil.calcEnding(cooldownService.getCooldown(player, trade), NamedTextColor.GOLD)));
+      return;
+    }
+
+    int count = 0;
+
+    while (requirementService.hasRequirements(player, trade) && !cooldownService.isCooldown(player, trade)) {
+      requirementService.removeRequirements(player, trade);
+
+      if (player.getInventory().firstEmpty() == -1) {
+        player.getWorld().dropItem(player.getLocation(), trade.getItem()).setOwner(player.getUniqueId());
+      } else {
+        player.getInventory().addItem(trade.getItem());
+      }
+
+      count++;
+    }
+
+    if (count > 0) {
+      cooldownService.setCooldown(player, trade);
+      player.sendMessage(Component.text("Du hast ", NamedTextColor.GOLD).append(Component.text(count)).append(Component.text("x ")).append(trade.getName()).append(Component.text(" gekauft", NamedTextColor.GOLD)));
+    } else {
+      player.sendMessage(Component.text("Du hast nicht genug Ressourcen, um diesen Handel durchzuführen.", NamedTextColor.RED));
+    }
+  }
+
   public ShopTrade getTrade(ItemStack stack) {
     return tradeCache.get(stack);
   }

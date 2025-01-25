@@ -57,6 +57,10 @@ public class TradeService {
     int count = 0;
 
     while (requirementService.hasRequirements(player, trade) && !cooldownService.isCooldown(player, trade)) {
+      if(count >= trade.getMaximalBuysAtOnce()) {
+        break;
+      }
+
       requirementService.removeRequirements(player, trade);
 
       if (player.getInventory().firstEmpty() == -1) {

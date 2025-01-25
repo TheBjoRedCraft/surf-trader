@@ -44,4 +44,9 @@ public class TradeInvisibleItemFrame implements ShopTrade {
   public long getCooldown() {
     return 75600000L;
   }
+
+  @Override
+  public int getMaximalBuysAtOnce() {
+    return 32;
+  }
 }

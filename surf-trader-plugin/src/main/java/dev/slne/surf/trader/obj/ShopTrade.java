@@ -12,4 +12,5 @@ public interface ShopTrade {
   ShopTradeCurrency getCurrency();
 
   long getCooldown();
+  int getMaximalBuysAtOnce();
 }

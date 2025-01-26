@@ -109,6 +109,10 @@ public class TradeService {
     return tradeCache.get(stack);
   }
 
+  public ShopTrade getTrade(String id) {
+    return RegistryService.getInstance().getRegisteredTrades().stream().filter(trade -> trade.getID().equals(id)).findFirst().orElse(null);
+  }
+
   private ShopTrade loadTrade(ItemStack stack) {
     for (ShopTrade registeredTrade : RegistryService.getInstance().getRegisteredTrades()) {
       if (registeredTrade.getItem().isSimilar(stack)) {

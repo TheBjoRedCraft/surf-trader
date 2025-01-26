@@ -21,7 +21,7 @@ import org.bukkit.inventory.ItemStack;
 public class SpawnTraderMenu extends ChestGui {
   private final TradeService tradeService = TradeService.getInstance();
 
-  public SpawnTraderMenu(Player player) {
+  public SpawnTraderMenu() {
     super(6, "<shift:-8><glyph:menu_surf_trader_spawn>");
 
     /*
@@ -34,7 +34,7 @@ public class SpawnTraderMenu extends ChestGui {
     final OutlinePane bottomLeft = new OutlinePane(0, 3, 4, 3);
     final OutlinePane bottomRight = new OutlinePane(5, 3, 4, 3);
 
-    final ItemStack globeBannerItem = new ItemBuilder(Material.COMMAND_BLOCK_MINECART)
+    final ItemStack globeBannerItem = new ItemBuilder(Material.GLOBE_BANNER_PATTERN)
         .setName(Component.text("Globe Banner Vorlage"))
         .addLoreLine(Component.text("Mit dieser Banner Vorlage kannst du", PluginColor.LIGHT_GRAY))
         .addLoreLine(Component.text("deinen eigenen Banner mit dieser", PluginColor.LIGHT_GRAY))
@@ -49,13 +49,12 @@ public class SpawnTraderMenu extends ChestGui {
         .addLoreLine(Component.empty())
         .addLoreLine(Component.text("Wiederverwendbar: ", PluginColor.LIGHT_BLUE).append(Component.text("❌", NamedTextColor.RED).decorate(TextDecoration.BOLD)))
         .addLoreLine(Component.text("Klicke,", PluginColor.GOLD).append(Component.text(" um dieses Item ", PluginColor.LIGHT_GRAY)).append(Component.text("1x zukaufen", PluginColor.GOLD)))
-        .addLoreLine(Component.text("Shift-Klicke,", PluginColor.GOLD).append(Component.text(" um dieses Item ", PluginColor.LIGHT_GRAY)))
-        .addLoreLine(Component.text("32x zukaufen", PluginColor.GOLD))
+        .addLoreLine(Component.text("Shift-Klicke,", PluginColor.GOLD).append(Component.text(" um dieses Item ", PluginColor.LIGHT_GRAY)).append(Component.text("32x zukaufen", PluginColor.GOLD)))
         .setRarity(ItemRarity.EPIC)
         .setCustomModelData("surf_trader_invisible_item")
         .build();
 
-    final ItemStack invisibleItemFrame = new ItemBuilder(Material.COMMAND_BLOCK_MINECART)
+    final ItemStack invisibleItemFrame = new ItemBuilder(Material.ITEM_FRAME)
         .setName(Component.text("Unsichtbarer Item Rahmen"))
         .addLoreLine(Component.text("Ein unsichtbarer Item Rahmen, nach", PluginColor.LIGHT_GRAY))
         .addLoreLine(Component.text("dem abbauen bleibt der Rahmen", PluginColor.LIGHT_GRAY))
@@ -70,13 +69,12 @@ public class SpawnTraderMenu extends ChestGui {
         .addLoreLine(Component.empty())
         .addLoreLine(Component.text("Wiederverwendbar: ", PluginColor.LIGHT_BLUE).append(Component.text("✔", NamedTextColor.GREEN).decorate(TextDecoration.BOLD)))
         .addLoreLine(Component.text("Klicke,", PluginColor.GOLD).append(Component.text(" um dieses Item ", PluginColor.LIGHT_GRAY)).append(Component.text("1x zukaufen", PluginColor.GOLD)))
-        .addLoreLine(Component.text("Shift-Klicke,", PluginColor.GOLD).append(Component.text(" um dieses Item ", PluginColor.LIGHT_GRAY)))
-        .addLoreLine(Component.text("32x zukaufen", PluginColor.GOLD))
+        .addLoreLine(Component.text("Shift-Klicke,", PluginColor.GOLD).append(Component.text(" um dieses Item ", PluginColor.LIGHT_GRAY)).append(Component.text("32x zukaufen", PluginColor.GOLD)))
         .setRarity(ItemRarity.EPIC)
         .setCustomModelData("surf_trader_invisible_item")
         .build();
 
-    final ItemStack lightBlock = new ItemBuilder(Material.COMMAND_BLOCK_MINECART)
+    final ItemStack lightBlock = new ItemBuilder(Material.LIGHT)
         .setName(Component.text("Licht Block"))
         .addLoreLine(Component.text("Eine unsichtbare Licht Quelle.", PluginColor.LIGHT_GRAY))
         .addLoreLine(Component.text("Diese kann pro Item nur einmal platziert", PluginColor.LIGHT_GRAY))
@@ -93,8 +91,7 @@ public class SpawnTraderMenu extends ChestGui {
         .addLoreLine(Component.empty())
         .addLoreLine(Component.text("Wiederverwendbar: ", PluginColor.LIGHT_BLUE).append(Component.text("❌", NamedTextColor.RED).decorate(TextDecoration.BOLD)))
         .addLoreLine(Component.text("Klicke,", PluginColor.GOLD).append(Component.text(" um dieses Item ", PluginColor.LIGHT_GRAY)).append(Component.text("1x zukaufen", PluginColor.GOLD)))
-        .addLoreLine(Component.text("Shift-Klicke,", PluginColor.GOLD).append(Component.text(" um dieses Item ", PluginColor.LIGHT_GRAY)))
-        .addLoreLine(Component.text("32x zukaufen", PluginColor.GOLD))
+        .addLoreLine(Component.text("Shift-Klicke,", PluginColor.GOLD).append(Component.text(" um dieses Item ", PluginColor.LIGHT_GRAY)).append(Component.text("32x zukaufen", PluginColor.GOLD)))
         .setRarity(ItemRarity.EPIC)
         .setCustomModelData("surf_trader_invisible_item")
         .build();

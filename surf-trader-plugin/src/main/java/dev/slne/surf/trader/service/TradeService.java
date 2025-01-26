@@ -115,7 +115,7 @@ public class TradeService {
 
   private ShopTrade loadTrade(ItemStack stack) {
     for (ShopTrade registeredTrade : RegistryService.getInstance().getRegisteredTrades()) {
-      if (registeredTrade.getItem().isSimilar(stack)) {
+      if (registeredTrade.getItem().getType().equals(stack.getType())) {
         return registeredTrade;
       }
     }

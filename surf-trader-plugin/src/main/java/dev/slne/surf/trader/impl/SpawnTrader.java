@@ -19,6 +19,7 @@ import net.citizensnpcs.trait.LookClose;
 import net.kyori.adventure.text.Component;
 
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
@@ -70,5 +71,16 @@ public class SpawnTrader implements ShopTrader, MenuableTrader, SpawnableTrader 
     npc.spawn(location);
     //npc.getOrAddTrait(SkinTrait.class).setSkinPersistent("Trader", signature, texture);
     npc.getEntity().getScoreboardTags().add(STRING_ID);
+  }
+
+  @Override
+  public void remove(World world) {
+    for (NPC npc : CitizensAPI.getNPCRegistry()) {
+      if (npc.getEntity().getScoreboardTags().contains(STRING_ID)) {
+        npc.getEntity().remove();
+        npc.despawn();
+        npc.destroy();
+      }
+    }
   }
 }

@@ -1,6 +1,5 @@
 package dev.slne.surf.trader.service;
 
-import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.github.benmanes.caffeine.cache.LoadingCache;
 import dev.slne.surf.trader.obj.ShopTrade;
@@ -10,6 +9,7 @@ import java.time.Duration;
 import lombok.Getter;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.logger.slf4j.ComponentLogger;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
@@ -21,6 +21,7 @@ public class TradeService {
   private final TradeCooldownService cooldownService = TradeCooldownService.getInstance();
   private final TradeRequirementService requirementService = TradeRequirementService.getInstance();
 
+  private final ComponentLogger logger = ComponentLogger.logger(this.getClass());
   private final LoadingCache<ItemStack, ShopTrade> tradeCache = Caffeine
       .newBuilder()
       .expireAfterWrite(Duration.ofMinutes(30))
@@ -33,6 +34,7 @@ public class TradeService {
     }
 
     if(!requirementService.hasRequirements(player, trade)) {
+      player.sendMessage(Component.text("Du hast nicht genug Ressourcen, um dieses Item zukaufen.", NamedTextColor.RED));
       return;
     }
 
@@ -92,6 +94,7 @@ public class TradeService {
       ShopTrade trade = this.getTrade(stack);
 
       if (trade == null) {
+        logger.error(Component.text("Failed to find trade for item " + stack.getType().name(), NamedTextColor.RED));
         return;
       }
 
@@ -107,10 +110,6 @@ public class TradeService {
 
   public ShopTrade getTrade(ItemStack stack) {
     return tradeCache.get(stack);
-  }
-
-  public ShopTrade getTrade(String id) {
-    return RegistryService.getInstance().getRegisteredTrades().stream().filter(trade -> trade.getID().equals(id)).findFirst().orElse(null);
   }
 
   private ShopTrade loadTrade(ItemStack stack) {

@@ -57,7 +57,7 @@ public class SpawnTrader implements ShopTrader, MenuableTrader, SpawnableTrader 
 
   @Override
   public void openMenu(Player player) {
-    new SpawnTraderMenu(player).show(player);
+    new SpawnTraderMenu().show(player);
   }
 
   @Override

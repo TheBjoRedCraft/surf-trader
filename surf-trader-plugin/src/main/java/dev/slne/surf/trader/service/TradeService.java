@@ -54,6 +54,8 @@ public class TradeService {
     cooldownService.setCooldown(player, trade);
     AuxProtectService.getInstance().log(player, trade);
 
+    player.playSound(Sound.sound(org.bukkit.Sound.ENTITY_VILLAGER_YES, Source.MASTER, 1, 1), Emitter.self());
+
     player.sendMessage(Component.text("Du hast ", NamedTextColor.GOLD).append(trade.getName()).append(Component.text(" gekauft", NamedTextColor.GOLD)));
   }
 
@@ -81,6 +83,8 @@ public class TradeService {
       } else {
         player.getInventory().addItem(trade.getItem());
       }
+
+      player.playSound(Sound.sound(org.bukkit.Sound.ENTITY_VILLAGER_YES, Source.MASTER, 1, 1), Emitter.self());
 
       count++;
     }

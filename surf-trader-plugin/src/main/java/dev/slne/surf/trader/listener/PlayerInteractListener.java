@@ -3,6 +3,7 @@ package dev.slne.surf.trader.listener;
 
 import dev.slne.surf.trader.impl.SpawnTrader;
 import dev.slne.surf.trader.obj.ShopTrader;
+
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

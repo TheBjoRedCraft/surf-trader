@@ -65,6 +65,7 @@ public class TradeService {
       }
 
       requirementService.removeRequirements(player, trade);
+      cooldownService.setCooldown(player, trade);
 
       if (player.getInventory().firstEmpty() == -1) {
         player.getWorld().dropItem(player.getLocation(), trade.getItem()).setOwner(player.getUniqueId());
@@ -76,7 +77,6 @@ public class TradeService {
     }
 
     if (count > 0) {
-      cooldownService.setCooldown(player, trade);
       player.sendMessage(Component.text("Du hast ", NamedTextColor.GOLD).append(Component.text(count)).append(Component.text("x ")).append(trade.getName()).append(Component.text(" gekauft", NamedTextColor.GOLD)));
     } else {
       player.sendMessage(Component.text("Du hast nicht genug Ressourcen, um diesen Handel durchzuführen.", NamedTextColor.RED));

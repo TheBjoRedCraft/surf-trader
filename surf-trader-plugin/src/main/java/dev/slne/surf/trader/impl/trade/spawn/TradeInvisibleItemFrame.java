@@ -42,7 +42,7 @@ public class TradeInvisibleItemFrame implements ShopTrade {
 
   @Override
   public long getCooldown() {
-    return 75600000L;
+    return 72000000L;
   }
 
   @Override

@@ -6,7 +6,8 @@ import net.kyori.adventure.text.format.TextColor;
 
 public class TimeUtil {
   public static Component calcEnding(long ending, TextColor color) {
-    int seconds = (int) (ending / 1000);
+    int remaining = (int) (ending - System.currentTimeMillis());
+    int seconds = remaining / 1000;
     int minutes = seconds / 60;
     int hours = minutes / 60;
 
@@ -35,5 +36,4 @@ public class TimeUtil {
 
     return result;
   }
-
 }

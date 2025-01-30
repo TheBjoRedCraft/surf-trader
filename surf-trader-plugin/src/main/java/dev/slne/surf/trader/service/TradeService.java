@@ -7,6 +7,9 @@ import dev.slne.surf.trader.obj.ShopTrade;
 import dev.slne.surf.trader.util.TimeUtil;
 import java.time.Duration;
 import lombok.Getter;
+import net.kyori.adventure.sound.Sound;
+import net.kyori.adventure.sound.Sound.Emitter;
+import net.kyori.adventure.sound.Sound.Source;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.logger.slf4j.ComponentLogger;
@@ -30,11 +33,13 @@ public class TradeService {
   public void buy(Player player, ShopTrade trade) {
     if (cooldownService.isCooldown(player, trade)) {
       player.sendActionBar(Component.text("Bitte warte noch ", NamedTextColor.GRAY).append(TimeUtil.calcEnding(cooldownService.getCooldown(player, trade), NamedTextColor.GOLD)));
+      player.playSound(Sound.sound(org.bukkit.Sound.ENTITY_VILLAGER_NO, Source.MASTER, 1, 1), Emitter.self());
       return;
     }
 
     if(!requirementService.hasRequirements(player, trade)) {
       player.sendMessage(Component.text("Du hast nicht genug Ressourcen, um dieses Item zukaufen.", NamedTextColor.RED));
+      player.playSound(Sound.sound(org.bukkit.Sound.ENTITY_VILLAGER_NO, Source.MASTER, 1, 1), Emitter.self());
       return;
     }
 
@@ -55,6 +60,7 @@ public class TradeService {
   public void buyAYC(Player player, ShopTrade trade) {
     if (cooldownService.isCooldown(player, trade)) {
       player.sendActionBar(Component.text("Bitte warte noch ", NamedTextColor.GRAY).append(TimeUtil.calcEnding(cooldownService.getCooldown(player, trade), NamedTextColor.GOLD)));
+      player.playSound(Sound.sound(org.bukkit.Sound.ENTITY_VILLAGER_NO, Source.MASTER, 1, 1), Emitter.self());
       return;
     }
 
@@ -83,6 +89,7 @@ public class TradeService {
       player.sendMessage(Component.text("Du hast ", NamedTextColor.GOLD).append(Component.text(count)).append(Component.text("x ")).append(trade.getName()).append(Component.text(" gekauft", NamedTextColor.GOLD)));
     } else {
       player.sendMessage(Component.text("Du hast nicht genug Ressourcen, um diesen Handel durchzuführen.", NamedTextColor.RED));
+      player.playSound(Sound.sound(org.bukkit.Sound.ENTITY_VILLAGER_NO, Source.MASTER, 1, 1), Emitter.self());
     }
   }
 

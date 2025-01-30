@@ -85,16 +85,16 @@ public class SpawnTrader implements ShopTrader, MenuableTrader, SpawnableTrader 
         new NpcLocation(location.getX(), location.getY(), location.getZ(), location.getYaw(), location.getPitch())
     );
 
-    npcApi.getPropertyRegistry().registerDummy(STRING_ID, String.class);
     playerNpc.getNpc().getHologram().insertLine(0, STRING_NAME);
     playerNpc.getNpc().setProperty(skinProperty, npcApi.getSkinDescriptorFactory().createStaticDescriptor("Trader"));
     playerNpc.getNpc().setProperty(lookProperty, LookType.PER_PLAYER);
+    playerNpc.getNpc().setProperty(SurfTrader.getInstance().getTraderProperty(), STRING_ID);
     playerNpc.enableEverything();
   }
 
   @Override
   public void remove(World world) {
-    if(npcApi.getPropertyRegistry().getByName(STRING_ID) == null) {
+    if(npcApi.getPropertyRegistry().getByName(SurfTrader.getInstance().getTRADER_PROPERTY()) == null) {
       Bukkit.getConsoleSender().sendMessage(Component.text("SurfTrader -> Property not found: " + STRING_ID, PluginColor.RED));
       return;
     }
@@ -102,7 +102,8 @@ public class SpawnTrader implements ShopTrader, MenuableTrader, SpawnableTrader 
     npcApi.getNpcRegistry()
         .getAll()
         .stream()
-        .filter(npc -> npc.getNpc().getProperty(npcApi.getPropertyRegistry().getByName(STRING_ID)) != null)
+        .filter(npc -> npc.getNpc().hasProperty(npcApi.getPropertyRegistry().getByName(SurfTrader.getInstance().getTRADER_PROPERTY())))
+        .filter(npc -> npc.getNpc().getProperty(npcApi.getPropertyRegistry().getByName(SurfTrader.getInstance().getTRADER_PROPERTY())).equals(STRING_ID))
         .forEach(npc -> npcApi.getNpcRegistry().delete(npc.getId()));
   }
 }

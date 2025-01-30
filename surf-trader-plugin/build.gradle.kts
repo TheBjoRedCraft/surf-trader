@@ -30,8 +30,8 @@ repositories {
     }
 
     maven {
-        name = "citizens-repo"
-        url = uri("https://maven.citizensnpcs.co/repo")
+        name = "pyrSnapshots"
+        url = uri("https://repo.pyr.lol/snapshots")
     }
 }
 
@@ -43,9 +43,7 @@ dependencies {
         exclude("*", "*")
     }*/
 
-    compileOnly("net.citizensnpcs:citizens-main:2.0.37-SNAPSHOT") {
-        exclude("*", "*")
-    }
+    compileOnly("lol.pyr:znpcsplus-api:2.0.0-SNAPSHOT")
 
     implementation ("com.github.stefvanschie.inventoryframework:IF:0.10.19")
     implementation("org.reflections:reflections:0.10.2")
@@ -93,7 +91,7 @@ paper {
             required = true
         }
 
-        register("Citizens") {
+        register("ZNPCsPlus") {
             load = PaperPluginDescription.RelativeLoadOrder.BEFORE
             required = true
         }

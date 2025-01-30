@@ -13,11 +13,11 @@ dependencies:
       load: BEFORE
       required: true
       join-classpath: true
-    Citizens:
+    CommandAPI:
       load: BEFORE
       required: true
       join-classpath: true
-    CommandAPI:
+    ZNPCsPlus:
       load: BEFORE
       required: true
       join-classpath: true

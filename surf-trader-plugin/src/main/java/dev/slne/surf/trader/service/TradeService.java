@@ -47,6 +47,7 @@ public class TradeService {
     }
 
     cooldownService.setCooldown(player, trade);
+    AuxProtectService.getInstance().log(player, trade);
 
     player.sendMessage(Component.text("Du hast ", NamedTextColor.GOLD).append(trade.getName()).append(Component.text(" gekauft", NamedTextColor.GOLD)));
   }
@@ -66,6 +67,8 @@ public class TradeService {
 
       requirementService.removeRequirements(player, trade);
       cooldownService.setCooldown(player, trade);
+
+      AuxProtectService.getInstance().log(player, trade);
 
       if (player.getInventory().firstEmpty() == -1) {
         player.getWorld().dropItem(player.getLocation(), trade.getItem()).setOwner(player.getUniqueId());

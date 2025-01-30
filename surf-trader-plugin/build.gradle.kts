@@ -50,6 +50,9 @@ dependencies {
     implementation ("com.github.stefvanschie.inventoryframework:IF:0.10.19")
     implementation("org.reflections:reflections:0.10.2")
     implementation("com.github.ben-manes.caffeine:caffeine:3.2.0")
+    implementation("com.github.Heliosares:AuxProtect:1.3.1") {
+        exclude("*", "*")
+    }
 }
 
 tasks {
@@ -64,6 +67,8 @@ tasks {
 
     shadowJar {
         archiveClassifier = ""
+
+        relocate("com.github.Heliosares", "dev.slne.surf.trader.lib")
     }
 }
 
@@ -78,6 +83,11 @@ paper {
 
 
     serverDependencies {
+        register("AuxProtect") {
+            load = PaperPluginDescription.RelativeLoadOrder.BEFORE
+            required = true
+        }
+
         register("CommandAPI") {
             load = PaperPluginDescription.RelativeLoadOrder.BEFORE
             required = true

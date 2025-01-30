@@ -2,6 +2,7 @@ package dev.slne.surf.trader;
 
 import dev.slne.surf.trader.command.SurfTraderCommand;
 import dev.slne.surf.trader.listener.PlayerInteractListener;
+import dev.slne.surf.trader.service.AuxProtectService;
 import dev.slne.surf.trader.service.RegistryService;
 
 import net.kyori.adventure.text.Component;
@@ -15,7 +16,7 @@ public class SurfTrader extends JavaPlugin {
 
   @Override
   public void onEnable() {
-    //AuxProtectService.getInstance().createAction();
+    AuxProtectService.getInstance().createAction();
 
     RegistryService.getInstance().registerAll();
 

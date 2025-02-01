@@ -28,10 +28,11 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: dev.jorel:commandapi-bukkit-core:9.7.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: net.citizensnpcs:citizens-main:2.0.37-SNAPSHOT" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: lol.pyr:znpcsplus-api:2.0.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Gradle: com.github.stefvanschie.inventoryframework:IF:0.10.19" level="project" />
     <orderEntry type="library" name="Gradle: org.reflections:reflections:0.10.2" level="project" />
     <orderEntry type="library" name="Gradle: com.github.ben-manes.caffeine:caffeine:3.2.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.Heliosares:AuxProtect:1.3.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.projectlombok:lombok:1.18.34" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: com.google.guava:guava:33.3.1-jre" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: net.md-5:bungeecord-chat:1.20-R0.2-deprecated+build.19" level="project" />

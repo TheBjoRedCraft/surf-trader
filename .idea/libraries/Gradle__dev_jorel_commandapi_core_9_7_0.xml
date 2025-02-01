@@ -5,6 +5,8 @@
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.jorel/commandapi-core/9.7.0/598cf50bc218d337a6142c96e4957a62df8e47a1/commandapi-core-9.7.0.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.jorel/commandapi-core/9.7.0/3b4af1fb34323506fff657d457884f0968aed1cd/commandapi-core-9.7.0-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

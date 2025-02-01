@@ -5,6 +5,8 @@
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ben-manes.caffeine/caffeine/3.2.0/35eba09997476a39492ac7f7b2bb0e8292c09d17/caffeine-3.2.0.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ben-manes.caffeine/caffeine/3.2.0/ad5fbdd3e638c5e157f056c53c7e8e1cea2dc920/caffeine-3.2.0-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

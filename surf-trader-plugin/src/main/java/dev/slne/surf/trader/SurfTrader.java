@@ -20,6 +20,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class SurfTrader extends JavaPlugin {
   private static final String[] SUPPORTED_VERSIONS = new String[] { "1.21.4", "1.21.5" };
   private final String TRADER_PROPERTY = "trader";
+
   private EntityProperty<String> traderProperty;
   private NpcApi npcApi;
 

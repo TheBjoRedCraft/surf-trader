@@ -11,10 +11,5 @@
         <module name="surf-trader-plugin.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="surf-trader-plugin" target="21" />
-      <module name="surf-trader-plugin.main" target="21" />
-      <module name="surf-trader-plugin.test" target="21" />
-    </bytecodeTargetLevel>
   </component>
 </project>

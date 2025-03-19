@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/surf-trader-api/surf-trader-new.surf-trader-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/surf-trader-api/surf-trader-new.surf-trader-api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/surf-trader-bukkit/surf-trader-new.surf-trader-bukkit.main.iml" filepath="$PROJECT_DIR$/.idea/modules/surf-trader-bukkit/surf-trader-new.surf-trader-bukkit.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/surf-trader-core/surf-trader-new.surf-trader-core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/surf-trader-core/surf-trader-new.surf-trader-core.main.iml" />
+    </modules>
+  </component>
+</project>

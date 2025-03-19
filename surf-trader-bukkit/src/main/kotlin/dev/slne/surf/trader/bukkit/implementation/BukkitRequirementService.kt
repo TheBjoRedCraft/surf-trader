@@ -9,11 +9,11 @@ import org.bukkit.entity.Player
 
 @AutoService(RequirementService::class)
 class BukkitRequirementService(): RequirementService, Fallback {
-    override fun hasRequirement(player: Player, requirement: SurfTradeRequirement): Boolean {
-        TODO("Not yet implemented")
+    override suspend fun hasRequirement(player: Player, requirement: SurfTradeRequirement): Boolean {
+        return requirement.hasRequirement(player)
     }
 
-    override fun hasRequirement(player: Player, trade: SurfTrade) {
+    override suspend fun hasRequirements(player: Player, trade: SurfTrade) {
         TODO("Not yet implemented")
     }
 }

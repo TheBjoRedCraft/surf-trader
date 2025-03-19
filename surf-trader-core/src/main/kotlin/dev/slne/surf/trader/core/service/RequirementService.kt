@@ -6,8 +6,8 @@ import dev.slne.surf.trader.api.trade.SurfTrade
 import org.bukkit.entity.Player
 
 interface RequirementService {
-    fun hasRequirement(player: Player, requirement: SurfTradeRequirement): Boolean
-    fun hasRequirement(player: Player, trade: SurfTrade)
+    suspend fun hasRequirement(player: Player, requirement: SurfTradeRequirement): Boolean
+    suspend fun hasRequirements(player: Player, trade: SurfTrade)
 
     companion object {
         val INSTANCE = requiredService<RequirementService>()

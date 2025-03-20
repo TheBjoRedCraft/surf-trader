@@ -14,6 +14,6 @@ class BukkitRequirementService(): RequirementService, Fallback {
     }
 
     override suspend fun hasRequirements(player: Player, trade: SurfTrade) {
-        TODO("Not yet implemented")
+        trade.requirements.all { it.hasRequirement(player) }
     }
 }

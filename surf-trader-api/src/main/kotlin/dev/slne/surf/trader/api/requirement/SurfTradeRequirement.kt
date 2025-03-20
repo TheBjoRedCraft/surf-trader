@@ -4,5 +4,5 @@ import org.bukkit.entity.Player
 
 interface SurfTradeRequirement {
     fun getRequirement(): Any
-    suspend fun hasRequirement(player: Player): Boolean
+    suspend fun removeRequirements(player: Player): Boolean
 }

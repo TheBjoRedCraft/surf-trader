@@ -11,8 +11,7 @@ class SurfTradeItemRequirement(
         return item
     }
 
-
-    override suspend fun hasRequirement(player: Player): Boolean {
-        return player.inventory.containsAtLeast(item.asOne(), item.amount)
+    override suspend fun removeRequirements(player: Player): Boolean {
+        return player.inventory.removeItem(item).isEmpty()
     }
 }

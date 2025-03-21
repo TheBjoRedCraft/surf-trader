@@ -13,18 +13,18 @@ repositories {
 }
 
 dependencies {
-    compileOnly(libs.surf.transaction)
+    compileOnly(libs.surf.gui)
 
-    api(project(":surf-trader-core"))
+    api(project(":surf-trader-api"))
 }
 
 surfPaperPluginApi {
-    mainClass("dev.slne.surf.trader.bukkit.SurfTraderBukkit")
+    mainClass("dev.slne.surf.trader.example.SurfTraderExample")
     authors.add("SLNE Development")
 
     generateLibraryLoader(false)
 
     serverDependencies {
-        registerRequired("surf-transaction-bukkit")
+        registerRequired("surf-gui-bukkit")
     }
 }

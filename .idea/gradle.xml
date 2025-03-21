@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/surf-trader-api" />
             <option value="$PROJECT_DIR$/surf-trader-bukkit" />
             <option value="$PROJECT_DIR$/surf-trader-core" />
+            <option value="$PROJECT_DIR$/surf-trader-example" />
           </set>
         </option>
       </GradleProjectSettings>

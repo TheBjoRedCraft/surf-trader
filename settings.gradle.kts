@@ -4,3 +4,4 @@ plugins {
 include("surf-trader-bukkit")
 include("surf-trader-api")
 include("surf-trader-core")
+include("surf-trader-example")

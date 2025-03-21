@@ -23,7 +23,7 @@ class BukkitSurfTraderApi(): SurfTraderApi, Fallback {
         return cooldownService.isOnCooldown(player, trade)
     }
 
-    override fun trade(player: Player, trade: SurfTrade): TradeResult {
+    override suspend fun trade(player: Player, trade: SurfTrade): TradeResult {
         return tradeService.trade(player, trade)
     }
 }

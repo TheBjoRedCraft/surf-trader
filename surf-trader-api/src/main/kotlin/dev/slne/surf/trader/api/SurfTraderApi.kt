@@ -11,7 +11,7 @@ interface SurfTraderApi {
     fun setCooldown(player: Player, trade: SurfTrade, cooldown: Long)
     fun isOnCooldown(player: Player, trade: SurfTrade): Boolean
 
-    fun trade(player: Player, trade: SurfTrade): TradeResult
+    suspend fun trade(player: Player, trade: SurfTrade): TradeResult
 
     companion object {
         val INSTANCE = requiredService<SurfTraderApi>()

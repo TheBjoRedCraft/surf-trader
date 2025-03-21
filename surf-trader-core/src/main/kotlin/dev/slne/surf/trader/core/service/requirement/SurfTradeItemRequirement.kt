@@ -1,4 +1,4 @@
-package dev.slne.surf.trader.core.service.requirement
+package dev.slne.surf.trader.core.service.reward
 
 import dev.slne.surf.trader.api.requirement.SurfTradeRequirement
 import org.bukkit.entity.Player
@@ -12,6 +12,6 @@ class SurfTradeItemRequirement(
     }
 
     override suspend fun removeRequirements(player: Player): Boolean {
-        return player.inventory.removeItem(item).isEmpty()
+        return player.inventory.removeItemAnySlot(item).isEmpty()
     }
 }

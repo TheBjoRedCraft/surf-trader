@@ -1,6 +1,7 @@
 package dev.slne.surf.trader.api.trade
 
 import dev.slne.surf.trader.api.requirement.SurfTradeRequirement
+import dev.slne.surf.trader.api.reward.SurfTradeReward
 import it.unimi.dsi.fastutil.objects.ObjectList
 import net.kyori.adventure.text.Component
 import org.bukkit.NamespacedKey
@@ -15,5 +16,6 @@ data class SurfTrade (
     val cooldownKey: NamespacedKey = NamespacedKey("surf-trader", "trade-cooldown-$id"),
 
     val cooldown: Long,
-    var requirements: ObjectList<SurfTradeRequirement>
+    var requirements: ObjectList<SurfTradeRequirement>,
+    var rewards: ObjectList<SurfTradeReward>
 )

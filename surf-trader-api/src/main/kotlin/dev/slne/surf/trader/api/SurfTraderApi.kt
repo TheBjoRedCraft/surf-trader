@@ -7,6 +7,7 @@ import dev.slne.surf.trader.api.trade.SurfTrade
 import dev.slne.surf.trader.api.trader.SurfTrader
 import it.unimi.dsi.fastutil.objects.ObjectArraySet
 import it.unimi.dsi.fastutil.objects.ObjectSet
+import org.bukkit.Location
 import org.bukkit.entity.Player
 
 interface SurfTraderApi {
@@ -16,10 +17,8 @@ interface SurfTraderApi {
     fun setCooldown(player: Player, trade: SurfTrade, cooldown: Long)
     fun isOnCooldown(player: Player, trade: SurfTrade): Boolean
 
-    fun spawnTrader(surfTrader: SurfTrader)
+    fun spawnTrader(surfTrader: SurfTrader, location: Location)
     fun despawnTrader(surfTrader: SurfTrader)
-
-    fun handleJoin(player: Player)
 
     suspend fun trade(player: Player, trade: SurfTrade): TradeResult
 

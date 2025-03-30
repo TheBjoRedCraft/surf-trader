@@ -11,5 +11,7 @@ interface SurfTrader {
     val name: String
     val displayName: Component
 
+    val skinName: String
+
     val trades: ObjectList<SurfTrade>
 }

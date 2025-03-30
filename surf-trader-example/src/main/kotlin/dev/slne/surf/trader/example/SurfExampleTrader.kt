@@ -11,9 +11,10 @@ class SurfExampleTrader (
     override val id: UUID,
     override val name: String,
     override val displayName: Component,
-    override val trades: ObjectList<SurfTrade>
+    override val trades: ObjectList<SurfTrade>,
+    override val skinName: String
 ): SurfTrader, SurfMenuableTrader {
     override fun openMenu() {
-        
+
     }
 }

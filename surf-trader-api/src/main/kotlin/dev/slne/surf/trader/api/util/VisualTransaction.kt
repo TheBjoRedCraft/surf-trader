@@ -1,4 +1,4 @@
-package dev.slne.surf.trader.core.service.util
+package dev.slne.surf.trader.api.util
 
 import dev.slne.surf.transaction.api.currency.Currency
 import java.math.BigDecimal

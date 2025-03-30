@@ -1,4 +1,4 @@
-package dev.slne.surf.trader.core.service.reward
+package dev.slne.surf.trader.api.reward
 
 import dev.slne.surf.trader.api.reward.SurfTradeReward
 import org.bukkit.entity.Player

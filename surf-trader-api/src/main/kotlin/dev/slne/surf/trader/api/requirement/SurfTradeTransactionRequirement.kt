@@ -1,7 +1,7 @@
-package dev.slne.surf.trader.core.service.requirement
+package dev.slne.surf.trader.api.requirement
 
 import dev.slne.surf.trader.api.requirement.SurfTradeRequirement
-import dev.slne.surf.trader.core.service.util.VisualTransaction
+import dev.slne.surf.trader.api.util.VisualTransaction
 import dev.slne.surf.transaction.api.transaction.Transaction
 import dev.slne.surf.transaction.api.transaction.TransactionResult
 import dev.slne.surf.transaction.api.transactionApi

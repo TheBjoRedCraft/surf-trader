@@ -2,8 +2,10 @@
 surf-transaction = "1.21.5-1.0.0"
 surf-gui = "2.0.2-20250303.184044-1"
 paper = "1.21.4-R0.1-SNAPSHOT"
+znpcs-plus = "2.1.0-SNAPSHOT"
 
 [libraries]
 surf-transaction = { module = "dev.slne.surf:surf-transaction-api", version.ref = "surf-transaction" }
 surf-gui = { module = "dev.slne.surf:surf-gui-api", version.ref = "surf-gui" }
 paper = { module = "io.papermc.paper:paper-api", version.ref = "paper" }
+znpcs-plus = { module = "lol.pyr:znpcsplus-api", version.ref = "znpcs-plus" }

@@ -13,9 +13,9 @@ data class SurfTrade (
     val displayName: Component,
     val description: Component,
 
-    val cooldownKey: NamespacedKey = NamespacedKey("surf-trader", "trade-cooldown-$id"),
-
     val cooldown: Long,
     var requirements: ObjectList<SurfTradeRequirement>,
-    var rewards: ObjectList<SurfTradeReward>
+    var rewards: ObjectList<SurfTradeReward>,
+
+    val cooldownKey: NamespacedKey = NamespacedKey("surf-trader", "trade-cooldown-$id"),
 )

@@ -10,10 +10,15 @@ repositories {
     maven("https://repo.slne.dev/repository/maven-public/") {
         name = "maven-public"
     }
+
+    maven("https://repo.pyr.lol/snapshots") {
+        name = "pyrSnapshots"
+    }
 }
 
 dependencies {
     compileOnly(libs.surf.transaction)
+    compileOnly(libs.znpcs.plus)
 
     api(project(":surf-trader-core"))
 }
@@ -26,5 +31,6 @@ surfPaperPluginApi {
 
     serverDependencies {
         registerRequired("surf-transaction-bukkit")
+        registerRequired("ZNPCsPlus")
     }
 }

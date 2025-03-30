@@ -23,6 +23,7 @@ surfPaperPluginApi {
     authors.add("SLNE Development")
 
     generateLibraryLoader(false)
+    foliaSupported(true)
 
     serverDependencies {
         registerRequired("surf-gui-bukkit")

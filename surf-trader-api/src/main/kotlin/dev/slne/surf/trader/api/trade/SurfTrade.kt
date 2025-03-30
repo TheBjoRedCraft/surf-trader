@@ -8,7 +8,6 @@ import org.bukkit.NamespacedKey
 import java.util.UUID
 
 data class SurfTrade (
-    val id : UUID,
     val name: String,
     val displayName: Component,
     val description: Component,
@@ -17,5 +16,5 @@ data class SurfTrade (
     var requirements: ObjectList<SurfTradeRequirement>,
     var rewards: ObjectList<SurfTradeReward>,
 
-    val cooldownKey: NamespacedKey = NamespacedKey("surf-trader", "trade-cooldown-$id"),
+    val cooldownKey: NamespacedKey = NamespacedKey("surf-trader", "trade-cooldown-$name"),
 )

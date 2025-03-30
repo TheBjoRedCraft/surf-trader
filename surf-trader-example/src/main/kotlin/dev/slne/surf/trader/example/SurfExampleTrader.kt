@@ -31,9 +31,8 @@ class SurfExampleTrader (
     }
 
     companion object {
-        fun getExampleTransactionTrade(uuid: UUID, id: Int, defaultCurrency: Currency): SurfTrade = SurfTrade(
-            uuid,
-            "example-trade-transaction-$id",
+        fun getExampleTransactionTrade(defaultCurrency: Currency): SurfTrade = SurfTrade(
+            "example-trade-transaction",
             Component.text("Example Transaction Trade"),
             Component.text("An example trade for transaction trades"),
             100L,
@@ -41,9 +40,8 @@ class SurfExampleTrader (
             ObjectArrayList.of(SurfTradeItemReward(buildItem(Material.DIAMOND){ displayName(Component.text("Danke für den Einkauf")) }))
         )
 
-        fun getExampleItemTrade(uuid: UUID, id: Int, defaultCurrency: Currency): SurfTrade = SurfTrade(
-            uuid,
-            "example-trade-item-$id",
+        fun getExampleItemTrade(defaultCurrency: Currency): SurfTrade = SurfTrade(
+            "example-trade-item",
             Component.text("Example Item Trade"),
             Component.text("An example trade for item trades"),
             100L,

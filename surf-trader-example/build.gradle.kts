@@ -26,6 +26,7 @@ surfPaperPluginApi {
     foliaSupported(true)
 
     serverDependencies {
+        registerRequired("surf-trader-bukkit")
         registerRequired("surf-gui-bukkit")
     }
 }

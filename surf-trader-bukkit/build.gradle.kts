@@ -31,7 +31,6 @@ surfPaperPluginApi {
     foliaSupported(true)
 
     serverDependencies {
-        registerRequired("surf-transaction-bukkit")
         registerRequired("ZNPCsPlus")
     }
 }

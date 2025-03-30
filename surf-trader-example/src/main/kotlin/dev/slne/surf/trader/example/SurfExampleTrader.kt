@@ -1,5 +1,7 @@
 package dev.slne.surf.trader.example
 
+import com.github.shynixn.mccoroutine.folia.launch
+import dev.slne.surf.gui.SurfGuiApi
 import dev.slne.surf.surfapi.bukkit.api.builder.buildItem
 import dev.slne.surf.surfapi.bukkit.api.builder.displayName
 import dev.slne.surf.trader.api.requirement.SurfTradeTransactionRequirement
@@ -10,6 +12,7 @@ import dev.slne.surf.trader.api.trader.SurfMenuableTrader
 import dev.slne.surf.trader.api.trader.SurfTrader
 import dev.slne.surf.trader.api.util.VisualTransaction
 import dev.slne.surf.trader.core.service.reward.SurfTradeItemRequirement
+import dev.slne.surf.trader.example.menu.SurfTraderExampleMenu
 import dev.slne.surf.transaction.api.currency.Currency
 import dev.slne.surf.transaction.api.transactionApi
 import it.unimi.dsi.fastutil.objects.ObjectArrayList
@@ -27,7 +30,9 @@ class SurfExampleTrader (
     override val skinName: String
 ): SurfTrader, SurfMenuableTrader {
     override fun openMenu(player: Player) {
-
+        plugin.launch {
+            SurfTraderExampleMenu().open(SurfGuiApi.getInstance().createNewUser(player.uniqueId))
+        }
     }
 
     companion object {
